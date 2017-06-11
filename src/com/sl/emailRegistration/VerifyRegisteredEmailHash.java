@@ -48,10 +48,12 @@ public class VerifyRegisteredEmailHash extends HttpServlet {
 			if(UserDAO.verifyEmailHash(userId.toString(), hash) && scope.equals(GlobalConstants.ACTIVATION)) {
 			   //update status as active
 			   UserDAO.updateStaus(userId.toString(), "active");
+			   UserDAO.updateEmailVerificationHash(userId.toString(), null);
 			   message = "Email verified successfully. Account was activated. Clic <a href=\"index.html\">here</a> to login";
 			} else if(UserDAO.verifyEmailHash(userId.toString(), hash) && scope.equals(GlobalConstants.RESET_PASSWORD)) {
 			   //update status as active
 			   UserDAO.updateStaus(userId.toString(), "active");
+			   UserDAO.updateEmailVerificationHash(userId.toString(), null);
 			   //put some session for user
 			   request.getSession().setAttribute(GlobalConstants.USER, userId);
 			   request.getSession().setAttribute(GlobalConstants.IS_RESET_PASSWORD_VERIFIED, GlobalConstants.YES);
