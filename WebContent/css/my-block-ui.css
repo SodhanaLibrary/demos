@@ -1,0 +1,31 @@
+#blockUiBackdrop {
+	height: 100vh;
+	width: 100%;
+	z-index: 20000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	opacity: 0.5;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	display:none;
+}
+
+#blockUiDiv {
+    background-color: transparant;
+    width:194px;
+    height:194px;
+    position:absolute;
+    left:calc(50% - 97px);
+    top:calc(50vh - 97px);
+    display:none;
+    z-index: 20001;
+}
+
+#blockUiDiv img {
+    width:194px;
+    height:194px;
+}
